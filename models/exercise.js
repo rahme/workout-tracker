@@ -1,7 +1,6 @@
-const mongoose = require('mongoose')
-const schmea = mongoose.Schmea
-
-const exerciseschema = new schmea({
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const exerciseplan = new Schema({
     type: String,
     name: String,
     distance: Number,
@@ -9,7 +8,7 @@ const exerciseschema = new schmea({
     weight: Number,
     sets: Number,
     reps: Number
-})
+});
 
-const exercise = mongoose.model("Exercise", exerciseschema)
-module.exports = exercise
+const exercise = mongoose.model("Exercise", exerciseplan);
+module.exports = exercise;
