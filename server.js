@@ -12,6 +12,8 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(htmlRouter);
+app.use(apiRouter);
 
 mongoose.connect('mongodb+srv://raffayahmed:password123456789@cluster0.7vqtw.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
@@ -21,11 +23,6 @@ mongoose.connect('mongodb+srv://raffayahmed:password123456789@cluster0.7vqtw.mon
 
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("connection success"));
-
-app.use(htmlRouter);
-app.use(apiRouter);
-
-
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
 });
