@@ -1,7 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -13,20 +9,15 @@ const Exercise = require("./models/exerciseModel.js");
 const app = express();
 
 app.use(logger("dev"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 app.use(express.static("public"));
 
-mongoose.connect(  process.env.MONGODB_URI,
-{
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}
-);
+mongoose.connect('mongodb+srv://raffayahmed:password123456789@cluster0.7vqtw.mongodb.net/test?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+});
 
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("connection success"));
@@ -36,5 +27,5 @@ app.use(apiRouter);
 
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+    console.log(`App running on port ${PORT}!`);
 });
