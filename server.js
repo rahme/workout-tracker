@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const htmlRouter = require("./routes/htmlRoutes")
 const apiRouter = require("./routes/apiRoutes")
 const db = mongoose.connection
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 const Exercise = require("./models/exercise.js")
 const app = express();
 
@@ -24,5 +24,5 @@ mongoose.connect('mongodb+srv://raffayahmed:database@cluster0.ii1sf.mongodb.net/
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("connection success"));
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
+    console.log(`App running on port 5000!`);
 });
