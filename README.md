@@ -12,7 +12,7 @@ This application is created to help track a workout and its trend.
 Have Node.js and MongoDB installed. Download the files and type into terminal "npm install" and then "node server.js".
 
 ## Usage
-This app is meant to be used to show the capibilities of MySQL, Handlebars, and Express.
+This app is meant to be used to show the capibilities of MongoDB and Nodejs.
 ![Image of Dashboard](https://github.com/rahme/workout-tracker/blob/main/public/screenshots/dashboard.png?raw=true)
 ![Image of Workout](https://github.com/rahme/workout-tracker/blob/main/public/screenshots/tracker.png?raw=true)
 
